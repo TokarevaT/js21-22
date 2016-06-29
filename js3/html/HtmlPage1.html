@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link href="../content/bootstrap.css" rel="stylesheet" />
+    <link href="../css/stylesheet1.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--<button onclick="checkResults()" id="btnCheckResults" >Проверить мои результаты</button>-->
+    
+   
+    <a  id="btnCheckResults" href="#dialog" name="modal">Проверить мои результаты</a>
+    <div id="boxes">
+        <div id="dialog" class="window">
+            Правильных ответов: <label id="lblResultsCount"></label>
+             <br>
+            <span><a href="#" class="close">Закрыть</a></span>
+        </div>
+        <div id="mask"></div>
+    </div>
+
+
+
+    <script type="text/template" id="test">
+        <div class="main">
+
+            <% for (var i = 0; i < data.length;i++) { %>
+                <div class="titles"> <%= i + 1 %> <%= data[i].question %></div>
+                <% for (var j = 0; j < data[i].answers.length;j++) { %>
+                    <input type="checkbox" question="<%= i %>"><%= data[i].answers[j] %><br>
+                <% } %>
+            <% } %>
+        </div>
+    </script>
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../js/tmpl.js"></script>
+<script src="../unit_tests/app.js"></script>
+<script src="../es6/js/dist/javascript1.js"></script>
+</body>
+</html>
